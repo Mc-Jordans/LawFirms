@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candour Legal - Justice & Integrity</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png">
+    <link rel="manifest" href="images/icons/site.webmanifest">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <!-- <img src="logo.png" alt="Law Firm Logo" width="50" height="50"> -->
+                Candour Legal
+            </div>
+            <button id="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#practice-areas">Practice Areas</a></li>
+                    <li><a href="#attorneys">Attorneys</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="section landing-page">
+        <div class="hero">
+            <div class="content">
+                <h1 class="main-title">Justice & Integrity</h1>
+                <p>Your Trusted Legal Partners Since April 2001</p>
+                <div class="cta-container">
+                    <a href="#contact" class="cta-button primary">Get a Free Consultation</a>
+                    <a href="#practice-areas" class="cta-button secondary">Our Services</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">Scroll to explore</div>
+    </section>
+
+    <div id="practice-areas" class="section">
+        <h2>Our Practice Areas</h2>
+        <div class="practice-area-slider">
+            <button class="slider-button prev">&lt;</button>
+            <div class="slider-container">
+                <div class="slider-track"></div>
+            </div>
+            <button class="slider-button next">&gt;</button>
+        </div>
+    </div>
+
+        <section id="attorneys" class="section">
+            <h2>Our Attorneys</h2>
+            <div class="attorney-grid">
+                <!-- Attorneys will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <p>We're here to help you with your legal needs. Reach out to us today.</p>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fa-solid fa-phone"></i>
+                            (+1) 123-456-856
+                        </div>
+                        <div class="contact-method">
+                            <i class="fa-solid fa-envelope"></i>
+                            info@candourlegal.org
+                        </div>
+                        <div class="contact-method">
+                            <i class="fa-solid fa-location-dot"></i>
+                            123 Legal Street, City, State 12345
+                        </div>
+                    </div>
+                    <div class="social-media">
+                        <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="social-icon" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <form id="contact-form" class="contact-form" action="https://script.google.com/macros/s/AKfycbzoBN9hujNNnKEHVcJYvH0APlm7qtg62M6JoPxcNNjYyF7ABPcHsOlgUI-b_3FgCrsbuw/exec" method="post">
+                        <div class="form-group">
+                            <input type="text" id="name" name="Name" required>
+                            <label for="name">Your Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="Email" required>
+                            <label for="email">Your Email</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="Phone">
+                            <label for="phone">Your Phone Number</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="Message" required></textarea>
+                            <label for="message">Your Message</label>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="section">
+            <h2>Latest News</h2>
+            <div class="blog-posts">
+                <!-- Blog posts will be populated by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Candour Legal. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
