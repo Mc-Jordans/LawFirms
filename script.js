@@ -182,53 +182,61 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Handle form submission
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const submitButton = contactForm.querySelector('button[type="submit"]');
-            submitButton.disabled = true;
-            showMessage('Submitting...', 'info');
-    
-            const formData = new FormData(contactForm);
-            
-            fetch(contactForm.action, {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.text())
-            .then(result => {
-                if (result === 'Success') {
-                    showMessage('Thank you for your message. We will get back to you soon.', 'success');
-                    contactForm.reset();
-                } else {
-                    showMessage('There was an error submitting the form. Please try again.', 'error');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
+   // Handle form submission
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const submitButton = contactForm.querySelector('.submit-btn');
+        submitButton.disabled = true;
+        showMessage('Submitting...', 'loading');
+
+        const formData = new FormData(contactForm);
+
+        fetch(contactForm.action, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(result => {
+            if (result === 'Success') {
+                showMessage('Thank you for your message. We will get back to you soon.', 'success');
+                contactForm.reset();
+            } else {
                 showMessage('There was an error submitting the form. Please try again.', 'error');
-            })
-            .finally(() => {
-                submitButton.disabled = false;
-            });
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            showMessage('There was an error submitting the form. Please try again.', 'error');
+        })
+        .finally(() => {
+            submitButton.disabled = false;
         });
+    });
+}
+
+function showMessage(message, type) {
+    const messageElement = document.createElement('div');
+    messageElement.textContent = message;
+    messageElement.className = `message ${type}`;
+    messageElement.style.color = 'white';
+    messageElement.style.padding = '10px';
+    messageElement.style.marginBottom = '1rem';
+    if (type === 'success') {
+        messageElement.style.backgroundColor = 'green';
+    } else if (type === 'error') {
+        messageElement.style.backgroundColor = 'red';
+    } else {
+        messageElement.style.backgroundColor = 'gray';
     }
-    
-    function showMessage(message, type) {
-        const messageElement = document.createElement('div');
-        messageElement.style.backgroundColor = 'green' ? result === 'Success' : 'red';
-        messageElement.textContent = message;
-        messageElement.className = `message ${type}`;
-        if (contactForm) {
-            contactForm.appendChild(messageElement);
-    
-            setTimeout(() => {
-                messageElement.remove();
-            }, 5000);
-        }
+    if (contactForm) {
+        contactForm.appendChild(messageElement);
+        setTimeout(() => {
+            messageElement.remove();
+        }, 5000);
     }
+}
 
     // Scroll progress bar
     const scrollProgress = document.createElement('div');
