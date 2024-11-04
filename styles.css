@@ -105,16 +105,32 @@ nav ul li a:hover::after {
     transform: scaleX(1);
 }
 
+@keyframes movein{
+   0%{
+    scale: 0;
+   }
+
+   50%{
+    scale: 0.5;
+   }
+
+   100%{
+    scale: 1;
+   }
+
+}
+
+
 @media (max-width: 768px) {
     #menu-toggle {
         display: block;
-        margin-right: 20px;
+        margin: 1px 20px 0 0;
     }
 
     #main-nav {
         position: fixed;
-        top: 0;
-        right: -250px;
+        top: 75px;
+        right: 500px;
         width: 250px;
         height: 100%;
         background: linear-gradient(135deg, #003366, #1a5f7a);
@@ -123,7 +139,8 @@ nav ul li a:hover::after {
     }
 
     #main-nav.active {
-        right: 0;
+        left: -30px;
+        animation: movein 0.2s ease-in;
     }
 
     nav ul {

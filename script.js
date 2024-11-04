@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function() {
             postElement.innerHTML = `
                 <h3>${post.title}</h3>
                 <p>${post.summary}</p>
-                <a href="blog.html" class="read-more">Read More</a>
+                <a href="https://candourlegal.blogspot.com/" class="read-more">Read More</a>
             `;
             blogPostsContainer.appendChild(postElement);
         });
